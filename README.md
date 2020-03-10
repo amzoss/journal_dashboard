@@ -1,6 +1,10 @@
 # Duke Libraries Journal Usage Dashboard
 R scripts to prepare journal usage data and generate a dashboard
 
+## How to use
+
+All files assume that the top-level directory ("journal_dashboard") is the working directory in R. One easy way to set up the code is to create a new project in RStudio and build the project directly from the GitHub clone URL for this repository. (Create New Project --> Version Control --> Git --> paste in GitHub URL as Repository URL)
+
 ## Process Documentation
 
 * Web Scraping
