@@ -21,7 +21,7 @@ library(readxl)
 
 # Reads in data, pivoting the subject columns into a single column named "subject"
 # Note: subject columns in data file should start with "subj"
-data <- read.csv("all_data.csv", header = TRUE, encoding = 'UTF-8') %>%
+data <- read.csv("all_data_new.csv", header = TRUE, encoding = 'UTF-8') %>%
     gather(., starts_with('subj'), key = "subject", value = "number") %>%
     filter(!is.na(number)) %>%
     dplyr::select(-number)
@@ -243,7 +243,7 @@ server <- function(input, output, session) {
     
     output$text1 <- renderText({
         # sum up the total price and format
-        total_price = format(sum(data_subset()[,c("Price")]), big.mark = ",", scientific = F)
+        total_price = format(sum(data_subset() %>% distinct_at(vars(ISSN, Price)) %>% dplyr::select(Price)), big.mark = ",", scientific = F)
         paste0("$", total_price)
     })
     
@@ -262,7 +262,7 @@ server <- function(input, output, session) {
     
     output$text5 <- renderText({
         # sum up the total price and format
-        total_price2 = format(sum(data_diff()[,c("Price")]), big.mark = ",", scientific = F)
+        total_price2 = format(sum(data_diff() %>% distinct_at(vars(ISSN, Price)) %>% dplyr::select(Price)), big.mark = ",", scientific = F)
         paste0("$", total_price2)
     })
     
