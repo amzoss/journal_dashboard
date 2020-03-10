@@ -42,4 +42,4 @@ R scripts to prepare journal usage data and generate a dashboard
 
 ## Maintenance of these scripts
 
-This project is not being actively maintained, but the developer ([Angela Zoss](https://library.duke.edu/about/directory/staff/angela.zoss))is happy to answer questions and review issues.
+This project is not being actively maintained, but the developer ([Angela Zoss](https://library.duke.edu/about/directory/staff/angela.zoss)) is happy to answer questions and review issues.
