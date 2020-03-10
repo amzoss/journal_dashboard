@@ -104,8 +104,8 @@ for (year in start:end) {
 }
 
 # list of active journal titles
-all_journals = read.csv("DataProcessingScripts/ProcessedData/active_journals.csv")
-titles = as.character(all_journals$Full.Title)
+all_journals = read_csv("DataProcessingScripts/ProcessedData/active_journals.csv")
+titles = as.character(all_journals$EncodedTitle)
 
 # make request to api by id and title to get cited by papers
 for (id in af_id) {
@@ -113,8 +113,8 @@ for (id in af_id) {
 }
 
 # list of open access titles
-open_access = read.csv("DataProcessingScripts/ProcessedData/open_access_titles.csv")
-oa_titles = as.character(open_access$journal)
+open_access = read_csv("DataProcessingScripts/ProcessedData/open_access_titles.csv")
+oa_titles = as.character(open_access$EncodedTitle)
 
 # make request to api by id and oa title to get cited by
 for (id in af_id) {
@@ -122,8 +122,8 @@ for (id in af_id) {
 }
 
 # list of titles containing ampersand character
-ampersand = read.csv("DataProcessingScripts/ProcessedData/and_titles.csv")
-amp_titles = as.character(ampersand$x)
+ampersand = read_csv("DataProcessingScripts/ProcessedData/and_titles.csv")
+amp_titles = as.character(ampersand$EncodedTitle)
 
 # make request to api by id and amp title to get cited by
 for (id in af_id) {
